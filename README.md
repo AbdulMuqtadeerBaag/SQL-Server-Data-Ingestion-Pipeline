@@ -121,6 +121,7 @@ I am continuously learning and improving my technical capabilities to build stro
 ---
 ### 📬 Contact
 
-If you would like to connect or collaborate, feel free to reach out: <br>
+If you would like to connect or collaborate, feel free to reach out: 
+<br>
 📧 Email: muqtadeerbaag@gmail.com <br>
 🔗 LinkedIn: https://www.linkedin.com/in/abdul-muqtadeer-baag-499926334
