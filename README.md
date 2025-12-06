@@ -1,5 +1,5 @@
 # SQL-Server-Ingestion-Pipeline
-Welcome to the Project Repository!🚀
+Welcome to the Project Repository!🚀 <br>
 This project demonstrates a complete SQL Server–based Data Warehouse Pipeline using a structured multi-layer architecture.
 The solution covers data ingestion, cleaning, transformation, modeling, and analytics, following real-world Data Engineering standards.
 
@@ -19,7 +19,7 @@ The project uses a three-layer warehouse architecture:
 - Stores raw incoming data exactly as received.
 - No transformations applied.
 - Helps in traceability and replay if reprocessing is required.
-
+<br>
 2) **Refined Layer (Clean Zone):**
 - Data is cleaned, standardized, validated, deduplicated, and type-corrected.
 - Business rules are applied.
@@ -117,5 +117,5 @@ I am continuously learning and improving my technical capabilities to build stro
 #### Contact
 If you would like to connect or collaborate, feel free to reach out:
 
-📧 Email: muqtadeerbaag@gmail.com
+📧 Email: muqtadeerbaag@gmail.com <br>
 🔗 LinkedIn: Abdul Muqtadeer Baag
