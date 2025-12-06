@@ -119,8 +119,8 @@ I focus on writing clean, well-documented, and scalable SQL solutions suitable f
 I am continuously learning and improving my technical capabilities to build stronger and more efficient data systems.
 
 ---
-## 📬 Contact
+### 📬 Contact
 
-If you would like to connect or collaborate, feel free to reach out:
-📧 Email: muqtadeerbaag@gmail.com
+If you would like to connect or collaborate, feel free to reach out: <br>
+📧 Email: muqtadeerbaag@gmail.com <br>
 🔗 LinkedIn: https://www.linkedin.com/in/abdul-muqtadeer-baag-499926334
