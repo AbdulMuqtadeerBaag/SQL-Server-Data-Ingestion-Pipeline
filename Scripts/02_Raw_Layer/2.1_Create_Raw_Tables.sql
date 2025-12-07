@@ -10,11 +10,11 @@ Created On: 07/12/2025
 Purpose:
     Create raw tables to store incoming CSV data (Exact Copy).
 
-⚠ Warning!
+⚠Warning!
     This table holds raw unmodified source data.
     Do not apply any transformations here.
 
----------------------------------------------------------------------
+=====================================================================
 */
 
 -- Use the Database:
