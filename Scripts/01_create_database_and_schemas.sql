@@ -8,7 +8,7 @@
  Created On: 2025-12-07
 
  Overview:
-   This script initializes the DataWarehouse environment used in the
+   This script initializes the IngestionDB environment used in the
    SQL Server Ingestion Pipeline. It ensures a clean, consistent
    setup for end-to-end data processing.
 
@@ -28,35 +28,47 @@
 */
 
 -- Use the Master Database:
-USE master;
-GO
+  USE master;
+  GO
 
 -- Drop IngestionDB if it already exists:
-IF DB_ID('IngestionDB') IS NOT NULL
-BEGIN
-    ALTER DATABASE IngestionDB 
-    SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-    
-    DROP DATABASE IngestionDB;
-END;
-GO
+  IF DB_ID('IngestionDB') IS NOT NULL
+    BEGIN
+        ALTER DATABASE IngestionDB 
+        SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+        
+        DROP DATABASE [IngestionDB];
+        PRINT('IngestionDB Dropped Successfully!');
+    END;
+  ELSE
+    BEGIN
+        PRINT('IngestionDB doesn`t exist. Creating a new Database...');
+    END;
+  GO
 
 -- Create the Database:
-Create Database IngestionDB;
-GO
+  CREATE DATABASE [IngestionDB];
+  GO
 
 -- Use the Database:
-Use IngestionDB;
-GO
+  USE [IngestionDB];
+  GO
 
+-- Check Current Database:
+  SELECT DB_NAME() AS Database_Name;
+  GO
+    
 -- Create Schema_1:
-Create Schema Raw;
-Go
+  CREATE SCHEMA [raw]
+    AUTHORIZATION dbo;
+  Go
 
 -- Create Schema_2:
-Create Schema Clean;
-GO
+   CREATE SCHEMA [clean]
+    AUTHORIZATION dbo;
+  Go
 
 -- Create Schema_3:
-Create Schema Final;
-Go
+   CREATE SCHEMA [final]
+    AUTHORIZATION dbo;
+  Go
