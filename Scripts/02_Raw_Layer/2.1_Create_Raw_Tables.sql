@@ -31,13 +31,13 @@ GO
 -- Create the CRM table_1 'Cust_Info':
 	CREATE TABLE raw.crm_cust_info
 	(
-		Cust_Id					      INT,
-		Cust_Key				      VARCHAR(30),
-		Cust_Firstname			  VARCHAR(50),
-		Cust_Lastname			    VARCHAR(50),
+		Cust_Id					INT,
+		Cust_Key				VARCHAR(30),
+		Cust_Firstname			VARCHAR(50),
+		Cust_Lastname			VARCHAR(50),
 		Cust_Marital_Status		VARCHAR(20),
-		Cust_Gndr				      VARCHAR(15),
-		Cust_Create_Date		  DATE
+		Cust_Gndr				VARCHAR(15),
+		Cust_Create_Date		DATE
 	);
 	GO
 
@@ -54,13 +54,13 @@ GO
 -- Create the CRM table_2 'Prod_Info':
 	CREATE TABLE raw.crm_prod_info
 	(
-		Prod_Id				    INT,
-		Prod_Key			    VARCHAR(30),
-		Prod_Name			    VARCHAR(50),
-		Prod_Cost			    INT,
-		Prod_Line			    VARCHAR(20),
+		Prod_Id				INT,
+		Prod_Key			VARCHAR(30),
+		Prod_Name			VARCHAR(50),
+		Prod_Cost			INT,
+		Prod_Line			VARCHAR(20),
 		Prod_Start_Date		DATETIME,
-		Prod_End_Date		  DATETIME
+		Prod_End_Date		DATETIME
 	);
 	GO
 
@@ -77,15 +77,15 @@ GO
 -- Create the CRM table_3 'Sales_Details':
 	CREATE TABLE raw.crm_sales_details
 	(
-		Sls_Ord_Num		   VARCHAR(20),
-		Sls_Prod_Key	   VARCHAR(30),
-		Sls_Cust_Id		   INT,
-		Sls_Order_Date	 INT,
-		Sls_Ship_Date	   INT,
-		Sls_Due_Date	   INT,
-		Sls_Sales		     INT,
-		Sls_Quantity	   INT,
-		Sls_Price		     INT
+		Sls_Ord_Num		VARCHAR(20),
+		Sls_Prod_Key	VARCHAR(30),
+		Sls_Cust_Id		INT,
+		Sls_Order_Date	INT,
+		Sls_Ship_Date	INT,
+		Sls_Due_Date	INT,
+		Sls_Sales		INT,
+		Sls_Quantity	INT,
+		Sls_Price		INT
 	);
 	GO
 
@@ -103,7 +103,7 @@ GO
 -- Create the ERP table_1 'Loc_Mst':
 	CREATE TABLE raw.erp_loc_mst
 	(
-		C_Id	   VARCHAR(30),
+		C_Id	 VARCHAR(30),
 		Country  VARCHAR(20)
 	);
 	GO
@@ -122,7 +122,7 @@ GO
 	CREATE TABLE raw.erp_cust_mst
 	(
 		C_Id    VARCHAR(30),
-		DoB		  DATE,
+		DoB		DATE,
 		Gender  VARCHAR(15)
 	);
 	GO
