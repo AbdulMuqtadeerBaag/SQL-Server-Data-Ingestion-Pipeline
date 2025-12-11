@@ -106,7 +106,7 @@ AS
 		dp.Product_Number	AS Product_Key,
 		dc.Customer_Key		AS Customer_Key,
 		sd.Sls_Order_Date	AS Order_Date,
-		sd.Sls_Ship_Date	AS Ship_Date,
+		sd.Sls_Ship_Date	AS Shipping_Date,
 		sd.Sls_Due_Date		AS Due_Date,
 		sd.Sls_Sales		AS Sales_Amount,
 		sd.Sls_Quantity		AS Quantity,
