@@ -50,7 +50,7 @@ Warning:
   CREATE DATABASE [IngestionDB];
   GO
 
--- Use the Database:
+-- Change the data context:
   USE [IngestionDB];
   GO
 
