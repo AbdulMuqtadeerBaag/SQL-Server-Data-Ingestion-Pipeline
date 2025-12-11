@@ -2,10 +2,9 @@
 =========================================================================
                DDL Scripts: Create Database and Schemas
 =========================================================================
- Project: SQL Server Data Ingestion Pipeline
+ Project: SQL Server Ingestion Pipeline
  Script: 01_create_database_and_schemas.sql
  Author: Abdul Muqtadeer Baag
- Created On: 07/12/2025
 
  Overview:
    This script initializes the IngestionDB environment used in the
@@ -13,15 +12,15 @@
    setup for end-to-end data processing.
 
  What This Script Does:
-   - Checks if the DataWarehouse database already exists.
+   - Checks if the IngestionDB database already exists.
    - If it exists, it is safely dropped and recreated.
    - Creates the pipeline schema layers:
          1) raw      – stores unprocessed source data.
          2) clean    – stores validated and transformed data.
          3) final    – stores curated, analytics-ready data.
 
-⚠Warning:
-     Running this script will DROP the existing DataWarehouse database.
+Warning:
+     Running this script will DROP the existing IngestionDB database.
      All current data will be permanently deleted.  
      Make sure you have backups before executing.
 
