@@ -103,8 +103,8 @@ CREATE VIEW final.fact_sales
 AS
 	SELECT
 		sd.Sls_Ord_Num		AS Order_Number,
-		dp.Product_Number	AS Product_Key,
-		dc.Customer_Key		AS Customer_Key,
+		dp.Product_Key		AS Product_Key,		-- Surrogate key.
+		dc.Customer_Key		AS Customer_Key,	-- Surrogate key.
 		sd.Sls_Order_Date	AS Order_Date,
 		sd.Sls_Ship_Date	AS Shipping_Date,
 		sd.Sls_Due_Date		AS Due_Date,
