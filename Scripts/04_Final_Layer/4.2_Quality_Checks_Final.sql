@@ -64,6 +64,6 @@ FROM final.fact_sales S
 LEFT JOIN final.dim_customers C
 	ON C.Customer_Key = S.Customer_Key
 LEFT JOIN final.dim_products P
-	ON P.Product_Number = S.Product_Key
+	ON P.Product_Key = S.Product_Key
 WHERE P.Product_Number IS NULL OR C.Customer_Key IS NULL;
 GO
