@@ -39,7 +39,7 @@ GO
 CREATE VIEW final.dim_customers
 AS
 	SELECT
-		ROW_NUMBER() OVER (ORDER BY ci.Cust_Id) AS Customer_Key, -- Surrogate Key.
+		ROW_NUMBER() OVER (ORDER BY ci.Cust_Id) AS Customer_Key, 	-- Surrogate Key.
 		ci.Cust_Id								AS Customer_Id,
 		ci.Cust_Key								AS Customer_Number,
 		ci.Cust_Firstname						AS First_Name,
@@ -72,7 +72,7 @@ GO
 CREATE VIEW final.dim_products
 AS
 	SELECT
-		ROW_NUMBER() OVER (ORDER BY pr.Prod_Start_Date, pr.Prod_Key) AS Product_Key,		-- Surrogate key.
+		ROW_NUMBER() OVER (ORDER BY pr.Prod_Start_Date, pr.Prod_Key) AS Product_Key,	-- Surrogate key.
 		pr.Prod_Id			AS Product_Id,
 		pr.Prod_Key			AS Product_Number,
 		pr.Prod_Name		AS Product_Name,
