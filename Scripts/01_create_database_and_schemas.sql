@@ -2,17 +2,17 @@
 =========================================================================
                DDL Scripts: Create Database and Schemas
 =========================================================================
- Project: SQL Server Ingestion Pipeline
+ Project: SQL Server Data Ingestion Pipeline
  Script: 01_create_database_and_schemas.sql
  Author: Abdul Muqtadeer Baag
 
  Overview:
-   This script initializes the IngestionDB environment used in the
-   SQL Server Ingestion Pipeline. It ensures a clean, consistent
+   This script initializes the 'IngestionDB' environment used in the
+   SQL Server Data Ingestion Pipeline. It ensures a clean, consistent
    setup for end-to-end data processing.
 
  What This Script Does:
-   - Checks if the IngestionDB database already exists.
+   - Checks if the 'IngestionDB' database already exists.
    - If it exists, it is safely dropped and recreated.
    - Creates the pipeline schema layers:
          1) raw      – stores unprocessed source data.
@@ -20,9 +20,9 @@
          3) final    – stores curated, analytics-ready data.
 
 Warning:
-     Running this script will DROP the existing IngestionDB database.
-     All current data will be permanently deleted.  
-     Make sure you have backups before executing.
+   - Running this script will DROP the existing IngestionDB database.
+   - All current data will be permanently deleted.  
+   - Make sure you have backups before executing.
 
 ==========================================================================
 */
@@ -50,7 +50,7 @@ Warning:
   CREATE DATABASE [IngestionDB];
   GO
 
--- Change the data context:
+-- Use the Database:
   USE [IngestionDB];
   GO
 
@@ -60,7 +60,7 @@ Warning:
     
 -- Create Schema_1:
   CREATE SCHEMA [raw]
-    AUTHORIZATION dbo;
+    AUTHORIZATION dbo;	-- Set 'dbo' as the schema Owner to avoid permission issues.
   Go
 
 -- Create Schema_2:
