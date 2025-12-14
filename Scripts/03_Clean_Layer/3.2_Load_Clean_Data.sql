@@ -2,10 +2,9 @@
 ==================================================================================
                    Stored Procedure: Load Clean Data (Raw -> Clean)
 ==================================================================================
-
-Project     : SQL Server Ingestion Pipeline
-Script      : 3.2_Load_Clean_Data.sql
-Author      : Abdul Muqtadeer Baag
+Project: SQL Server Data Ingestion Pipeline
+Script: 3.2_Load_Clean_Data.sql
+Author: Abdul Muqtadeer Baag
 
 Purpose:
 	- Perform ETL process to load data into the 'clean' schema.
@@ -115,7 +114,7 @@ BEGIN
 				WHEN UPPER(TRIM(Prod_Line)) = 'S' THEN 'Other Sales'
 				WHEN UPPER(TRIM(Prod_Line)) = 'T' THEN 'Touring'
 				ELSE 'n/a'
-			END AS Prod_Line,	-- Map product line codesto descriptive values.
+			END AS Prod_Line,	-- Map product line codes to descriptive values.
 			CAST(Prod_Start_Date AS DATE) AS Prod_Start_Date,
 			CAST(
 				LEAD(Prod_Start_Date) OVER (PARTITION BY Prod_Key ORDER BY Prod_Start_Date ASC)-1 AS DATE)
@@ -186,7 +185,7 @@ BEGIN
 			Country
 		)
 		SELECT
-			REPLACE(C_Id,'-',''),
+			REPLACE(C_Id,'-','') AS C_Id,
 			CASE
 				WHEN TRIM(Country) IN ('US','USA') THEN 'United States'
 				WHEN TRIM(Country) = 'DE' THEN 'Canada'
@@ -210,7 +209,7 @@ BEGIN
 		)
 		SELECT
 			CASE
-				WHEN C_Id LIKE 'Nas%' THEN SUBSTRING(C_Id,3,LEN(C_Id)) -- Remove 'NAS' prefix if present.
+				WHEN C_Id LIKE 'NAS%' THEN SUBSTRING(C_Id,4,LEN(C_Id)) -- Remove 'NAS' prefix if present.
 				ELSE C_Id
 			END AS C_Id,
 			CASE
