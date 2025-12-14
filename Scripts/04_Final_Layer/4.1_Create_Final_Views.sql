@@ -1,10 +1,9 @@
 /*
 ===================================================================
-              DDL Scripts: Create Final View
+				 DDL Scripts: Create Final View
 ===================================================================
-
-Project: SQL Server Ingestion Pipeline
-Scripts: 4.1_Create_Final_Views.sql
+Project: SQL Server Data Ingestion Pipeline
+Script: 4.1_Create_Final_Views.sql
 Author: Abdul Muqtadeer Baag
 
 Purpose:
@@ -39,19 +38,19 @@ GO
 CREATE VIEW final.dim_customers
 AS
 	SELECT
-		ROW_NUMBER() OVER (ORDER BY ci.Cust_Id) AS Customer_Key, 	-- Surrogate Key.
-		ci.Cust_Id								AS Customer_Id,
-		ci.Cust_Key								AS Customer_Number,
-		ci.Cust_Firstname						AS First_Name,
-		ci.Cust_Lastname						AS Last_Name,
-		lm.Country								AS Country,
-		ci.Cust_Marital_Status					AS Marital_Status,
+		ROW_NUMBER() OVER (ORDER BY ci.Cust_Id) AS Customer_Key,	 -- Surrogate Key.
+		ci.Cust_Id					AS Customer_Id,
+		ci.Cust_Key					AS Customer_Number,
+		ci.Cust_Firstname			AS First_Name,
+		ci.Cust_Lastname			AS Last_Name,
+		lm.Country					AS Country,
+		ci.Cust_Marital_Status		AS Marital_Status,
 		CASE
 			WHEN ci.Cust_Gndr != 'n/a' THEN ci.Cust_Gndr	-- CRM is the primary source for gender.
 			ELSE COALESCE(cm.Gender,'n/a')					-- Fallback to ERP data.
-		END										AS Gender,
-		cm.DoB									AS Birth_Date,
-		ci.Cust_Create_Date						AS Create_Date
+		END							AS Gender,
+		cm.DoB						AS Birth_Date,
+		ci.Cust_Create_Date			AS Create_Date
 	FROM clean.crm_cust_info ci
 	LEFT JOIN clean.erp_cust_mst cm
 		ON ci.Cust_Key = cm.C_Id
