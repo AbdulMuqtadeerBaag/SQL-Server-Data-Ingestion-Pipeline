@@ -2,10 +2,9 @@
 ==================================================================================
                    Stored Procedure: Load Raw Data (Source -> Raw)
 ==================================================================================
-
-Project     : SQL Server Ingestion Pipeline
-Script      : 2.2_Load_Raw_Data.sql
-Author      : Abdul Muqtadeer Baag
+Project: SQL Server Data Ingestion Pipeline
+Script: 2.2_Load_Raw_Data.sql
+Autho: Abdul Muqtadeer Baag
 
 Purpose:
    Load CSV/source files into the 'raw' schema (store as-is, landing zone).
@@ -50,7 +49,7 @@ BEGIN
 		TRUNCATE TABLE raw.crm_cust_info;
 		PRINT '>> Inserting Data Into: raw.crm_cust_info';
 		BULK INSERT raw.crm_cust_info
-		FROM 'C:\SQL Server\Project\Datasets\Source_CRM\Cust_Info.csv'
+		FROM 'C:\SQL Server\Projects\SQL-Server-Data-Ingestion-Pipeline\Datasets\Source_CRM\Cust_Info.csv'
 		WITH (
 				FIRSTROW = 2,			-- Skip header start from row 2.
 				FIELDTERMINATOR = ',',  -- Columns separated by comma.
@@ -67,7 +66,7 @@ BEGIN
 		TRUNCATE TABLE raw.crm_prod_info;
 		PRINT '>> Inserting Data Into: raw.crm_prod_info';
 		BULK INSERT raw.crm_prod_info
-		FROM 'C:\SQL Server\Project\Datasets\Source_CRM\Prod_Info.csv'
+		FROM 'C:\SQL Server\Projects\SQL-Server-Data-Ingestion-Pipeline\Datasets\Source_CRM\Prod_Info.csv'
 		WITH (
 				FIRSTROW = 2,
 				FIELDTERMINATOR = ',',
@@ -84,7 +83,7 @@ BEGIN
 		TRUNCATE TABLE raw.crm_sales_details;
 		PRINT '>> Inserting Data Into: raw.crm_sales_details';
 		BULK INSERT raw.crm_sales_details
-		FROM 'C:\SQL Server\Project\Datasets\Source_CRM\Sales_Details.csv'
+		FROM 'C:\SQL Server\Projects\SQL-Server-Data-Ingestion-Pipeline\Datasets\Source_CRM\Sales_Details.csv'
 		WITH (
 				FIRSTROW = 2,
 				FIELDTERMINATOR = ',',
@@ -105,7 +104,7 @@ BEGIN
 		TRUNCATE TABLE raw.erp_loc_mst;
 		PRINT '>> Inserting Data Into: raw.erp_loc_mst';
 		BULK INSERT raw.erp_loc_mst
-		FROM 'C:\SQL Server\Project\Datasets\Source_ERP\Loc_Mst.csv'
+		FROM 'C:\SQL Server\Projects\SQL-Server-Data-Ingestion-Pipeline\Datasets\Source_ERP\Loc_Mst.csv'
 		WITH (
 				FIRSTROW = 2,
 				FIELDTERMINATOR = ',',
@@ -122,7 +121,7 @@ BEGIN
 		TRUNCATE TABLE raw.erp_cust_mst;
 		PRINT '>> Inserting Data Into: raw.erp_cust_mst';
 		BULK INSERT raw.erp_cust_mst
-		FROM 'C:\SQL Server\Project\Datasets\Source_ERP\Cust_Mst.csv'
+		FROM 'C:\SQL Server\Projects\SQL-Server-Data-Ingestion-Pipeline\Datasets\Source_ERP\Cust_Mst.csv'
 		WITH (
 				FIRSTROW = 2,
 				FIELDTERMINATOR = ',',
@@ -139,7 +138,7 @@ BEGIN
 		TRUNCATE TABLE raw.erp_prod_catg;
 		PRINT '>> Inserting Data Into: raw.erp_prod_catg';
 		BULK INSERT raw.erp_prod_catg
-		FROM 'C:\SQL Server\Project\Datasets\Source_ERP\Prod_Catg.csv'
+		FROM 'C:\SQL Server\Projects\SQL-Server-Data-Ingestion-Pipeline\Datasets\Source_ERP\Prod_Catg.csv'
 		WITH (
 				FIRSTROW = 2,
 				FIELDTERMINATOR = ',',
