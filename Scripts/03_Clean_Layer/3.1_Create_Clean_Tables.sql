@@ -2,9 +2,8 @@
 ===================================================================
               DDL Scripts: Create Clean Tables
 ===================================================================
-
-Project: SQL Server Ingestion Pipeline
-Scripts: 3.1_Create_Clean_Tables.sql
+Project: SQL Server Data Ingestion Pipeline
+Script: 3.1_Create_Clean_Tables.sql
 Author: Abdul Muqtadeer Baag
 
 Purpose:
@@ -43,10 +42,6 @@ GO
 	);
 	GO
 
--- See the table:
-SELECT * FROM clean.crm_cust_info;
-GO
-
 ----------------------------------------------------------------------
 -- ii. Drop Table if it already exists:
 IF OBJECT_ID('clean.crm_prod_info', 'U') IS NOT NULL
@@ -67,10 +62,6 @@ GO
 		dwh_Create_Date		DATETIME2 DEFAULT GETDATE()
 	);
 	GO
-
--- See the table:
-SELECT * FROM clean.crm_prod_info;
-GO
 
 ----------------------------------------------------------------------
 -- iii. Drop Table if it already exists:
@@ -94,10 +85,6 @@ GO
 	);
 	GO
 
--- See the table:
-SELECT * FROM clean.crm_sales_details;
-GO
-
 ----------------------------------------------------------------------
 --ERP: Enterprise Resource Planning.
 -- i. Drop Table if it already exists:
@@ -113,10 +100,6 @@ GO
 		dwh_Create_Date		DATETIME2 DEFAULT GETDATE()
 	);
 	GO
-
--- See the table:
-SELECT * FROM clean.erp_loc_mst;
-GO
 
 ----------------------------------------------------------------------
 -- ii. Drop Table if it already exists:
@@ -134,10 +117,6 @@ GO
 	);
 	GO
 
--- See the table:
-SELECT * FROM clean.erp_cust_mst;
-GO
-
 ----------------------------------------------------------------------------
 -- iii. Drop Table if it already exists:
 IF OBJECT_ID('clean.erp_prod_catg', 'U') IS NOT NULL
@@ -154,7 +133,3 @@ GO
 		dwh_Create_Date		DATETIME2 DEFAULT GETDATE()
 	);
 	GO
-
--- See the table:
-SELECT * FROM clean.erp_prod_catg;
-GO
