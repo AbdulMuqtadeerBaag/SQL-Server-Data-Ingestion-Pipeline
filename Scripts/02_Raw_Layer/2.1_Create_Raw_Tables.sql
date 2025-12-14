@@ -2,8 +2,8 @@
 ===================================================================
               DDL Scripts: Create Raw Tables
 ===================================================================
-Project: SQL Server Ingestion Pipeline
-Scripts: 2.1_Create_Raw_Tables.sql
+Project: SQL Server Data Ingestion Pipeline
+Script: 2.1_Create_Raw_Tables.sql
 Author: Abdul Muqtadeer Baag
 
 Purpose:
@@ -11,8 +11,8 @@ Purpose:
     - Create tables to store incoming CSV data (Exact Copy).
 
 Warning!
-    This table holds raw unmodified source data.
-    Do not apply any transformations here.
+   - This table holds raw unmodified source data.
+   - Do not apply any transformations here.
 
 =====================================================================
 */
@@ -41,10 +41,6 @@ GO
 	);
 	GO
 
--- See the table:
-SELECT * FROM raw.crm_cust_info;
-GO
-
 ----------------------------------------------------------------------
 -- ii. Drop Table if it already exists:
 IF OBJECT_ID('raw.crm_prod_info', 'U') IS NOT NULL
@@ -63,10 +59,6 @@ GO
 		Prod_End_Date		DATETIME
 	);
 	GO
-
--- See the table:
-SELECT * FROM raw.crm_prod_info;
-GO
 
 ----------------------------------------------------------------------
 -- iii. Drop Table if it already exists:
@@ -89,10 +81,6 @@ GO
 	);
 	GO
 
--- See the table:
-SELECT * FROM raw.crm_sales_details;
-GO
-
 ----------------------------------------------------------------------
 --ERP: Enterprise Resource Planning.
 -- i. Drop Table if it already exists:
@@ -107,10 +95,6 @@ GO
 		Country  VARCHAR(20)
 	);
 	GO
-
--- See the table:
-SELECT * FROM raw.erp_loc_mst;
-GO
 
 ----------------------------------------------------------------------
 -- ii. Drop Table if it already exists:
@@ -127,10 +111,6 @@ GO
 	);
 	GO
 
--- See the table:
-SELECT * FROM raw.erp_cust_mst;
-GO
-
 ----------------------------------------------------------------------------
 -- iii. Drop Table if it already exists:
 IF OBJECT_ID('raw.erp_prod_catg', 'U') IS NOT NULL
@@ -146,7 +126,3 @@ GO
 		Maintenance  VARCHAR(10)
 	);
 	GO
-
--- See the table:
-SELECT * FROM raw.erp_prod_catg;
-GO
