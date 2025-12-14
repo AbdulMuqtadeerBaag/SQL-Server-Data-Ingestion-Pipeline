@@ -2,10 +2,9 @@
 ==================================================================================
                   DQL Script: Clean Layer Quality Checks
 ==================================================================================
-
-Project     : SQL Server Ingestion Pipeline
-Script      : 3.3_Quality_Checks_Clean.sql
-Author      : Abdul Muqtadeer Baag
+Project: SQL Server Data Ingestion Pipeline
+Script: 3.3_Quality_Checks_Clean.sql
+Author: Abdul Muqtadeer Baag
 
 Purpose:
 	- Perform data quality checks on the 'clean' layer to ensure accurancy, consistency, and correctness.
@@ -165,6 +164,7 @@ SELECT DISTINCT
     Country 
 FROM clean.erp_loc_mst
 ORDER BY Country;
+GO
 
 -- ================================================================================
 --					5. Checking 'clean.erp_cust_mst'
