@@ -2,10 +2,9 @@
 ==================================================================================
                   DQL Script: Final Layer Quality Checks
 ==================================================================================
-
-Project     : SQL Server Ingestion Pipeline
-Script      : 4.2_Quality_Checks_Final.sql
-Author      : Abdul Muqtadeer Baag
+Project: SQL Server Data Ingestion Pipeline
+Script: 4.2_Quality_Checks_Final.sql
+Author: Abdul Muqtadeer Baag
 
 Purpose:
 	- Validate the integrity and consistency of the 'final' layer.
@@ -65,5 +64,5 @@ LEFT JOIN final.dim_customers C
 	ON C.Customer_Key = S.Customer_Key
 LEFT JOIN final.dim_products P
 	ON P.Product_Key = S.Product_Key
-WHERE P.Product_Number IS NULL OR C.Customer_Key IS NULL;
+WHERE P.Product_Key IS NULL OR C.Customer_Key IS NULL;
 GO
